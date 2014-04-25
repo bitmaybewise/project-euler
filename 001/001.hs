@@ -1,3 +1,2 @@
-mod3_5 x = mod x 3 == 0 || mod x 5 == 0
-
-result = sum (filter mod3_5 [1..999])
+main = let acc = sum $ filter (\x -> mod x 3 ==0 || mod x 5 == 0) [1..999]
+       in putStrLn $ show acc
