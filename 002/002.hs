@@ -1,7 +1,10 @@
-fib 0 = 1
+fib 0 = 0
 fib 1 = 1
-fib x = fib (x - 1) + fib (x - 2)
+fib x = let f = \a b c -> if (c - 1) == 1
+                          then a + b
+                          else f b (a + b) (c - 1)
+        in f 0 1 x
 
-fibSum1 = sum . filter even . takeWhile (< 4000000) . map fib $ [1..]
+fibSum = sum $ takeWhile (< 4000000) $ map fib [3,6..]
 
-fibSum2 = sum (takeWhile (< 4000000) (map fib [2,5..]))
+main = putStrLn $ show fibSum

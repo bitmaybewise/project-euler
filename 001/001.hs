@@ -1,2 +1,2 @@
-main = let acc = sum $ filter (\x -> mod x 3 ==0 || mod x 5 == 0) [1..999]
+main = let acc = sum $ filter (\x -> mod x 3 == 0 || mod x 5 == 0) [1..999]
        in putStrLn $ show acc
